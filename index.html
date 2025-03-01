@@ -18,14 +18,16 @@
             <h2>Request a Quote</h2>
             <p>Complete the form below for an instant quote!</p>
             <form>
+                <label>Company Name::</label>
+                <input id="requirements" type="text" required>
                 <label>Port of load:</label>
-                <select class="options">
+                <select class="options" required>
                     <option>Melbourne</option>
                     <option>Sydney</option>
                     <option>Brisbane</option>
                 </select>
                 <label>Destination:</label>
-                <select class="options">
+                <select class="options" required>
                     <option>Shanghai</option>
                     <option>Ningbo</option>
                     <option>Shekou</option>
@@ -36,7 +38,7 @@
                     <option>Papeete</option>
                 </select>
                 <label>Container size:</label>
-                <select class="options">
+                <select class="options" required>
                     <option>20GP</option>
                     <option>40GP</option>
                     <option>40HC</option>
@@ -48,6 +50,28 @@
                 <label>Special requirements:</label>
                 <input id="requirements" type="text">
             </form>
+        </section>
+        <section id="table" style="display: none;">
+            <h2>Shipping Quote</h2>
+            <table id="table-head">
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>POL</th>
+                        <th>Destination</th>
+                        <th>Transit Time</th>
+                        <th>Container</th>
+                        <th>Freight <em>(USD)</em> per Container</th>
+                        <th>Terminal Handling Charge (AUD) per Container</th>
+                        <th>Documentation Fee (AUD) per Bill</th>
+                        <th>Depot Handling Charge (AUD) per Container</th>
+                        <th>Low Sulfur Surcharge <em>(USD)</em> per Container</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
         </section>
     </main>    
 </body>
