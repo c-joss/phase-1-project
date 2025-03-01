@@ -1,3 +1,54 @@
 body {
-    background-color: #abd2faff;    
+    background-color: #abd2faff; 
+    margin: 0%;   
 }
+
+header {
+    background-color: #3d518cff;
+    display: flex;
+    height: 200px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: auto;
+}
+
+header > img {
+    margin-left: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+form {
+    background-color: #7692ff40;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.options, input, label{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+form > :first-child {
+    margin-top: 15%;
+}
+
+form > :last-child {
+    margin-bottom: 15%;
+}
+
+section {
+    text-align: center;
+}
+
+
+
