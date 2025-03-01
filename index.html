@@ -10,22 +10,22 @@
         <h1>Davey Jones Shipping Rates</h1>
     </header>
     <main>
-        <section>
+        <section id="service">
             <h2>Service</h2>
             <p>Our Full Container Load (FCL) services offer reliable and cost-effective shipping solutions across <strong>Asia and the Pacific Islands</strong>. With an extensive network port partnerships, we ensure seamless port-to-port solutions. From major hubs in <strong>China, Japan, and Southeast Asia to key destinations in Australia, New Zealand, and the Pacific Islands</strong>, we help businesses optimize their international trade operations with secure and timely deliveries.</p>
         </section>
-        <section>
+        <section id="quote">
             <h2>Request a Quote</h2>
-            <p>Complete the for below for an instant quote!</p>
+            <p>Complete the form below for an instant quote!</p>
             <form>
                 <label>Port of load:</label>
-                <select>
+                <select class="options">
                     <option>Melbourne</option>
                     <option>Sydney</option>
                     <option>Brisbane</option>
                 </select>
-                <label>Destination</label>
-                <select>
+                <label>Destination:</label>
+                <select class="options">
                     <option>Shanghai</option>
                     <option>Ningbo</option>
                     <option>Shekou</option>
@@ -35,9 +35,20 @@
                     <option>Suva</option>
                     <option>Papeete</option>
                 </select>
+                <label>Container size:</label>
+                <select class="options">
+                    <option>20GP</option>
+                    <option>40GP</option>
+                    <option>40HC</option>
+                    <option>20RE</option>
+                    <option>40REHC</option>    
+                </select>
+                <label>Commodity</label>
+                <input id="commodity" type="text" required>
+                <label>Special requirements:</label>
+                <input id="requirements" type="text">
             </form>
         </section>
-    </main>
-    
+    </main>    
 </body>
 </html>
