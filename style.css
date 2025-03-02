@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to bottom, white, #abd2faff);
-    margin: 0%; 
+    margin: 0;
+    padding: 0; 
     width: 100%;
     height: 100%;  
 }
@@ -8,20 +9,36 @@ body {
 header {
     background-color: #3d518cff;
     display: flex;
+    justify-content: center;
     height: 200px;
+}
+
+#header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1750px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+main {
+    max-width: 1750px;
+    min-width: 320px;
+    margin: 0 auto;
 }
 
 h1 {
     font-size: 50px;
-    margin: auto;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: 0;
+    text-align: center;
 }
 
-header img {
-    margin-left: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+#logo {
+    position: absolute;
+    left: 50px;
+    width: 150px;
+    height: 150px;
 }
 
 section {
@@ -30,9 +47,11 @@ section {
 
 #service {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
+    padding-top: 100px;
+    height: 600px;
 }
 
 #text-container {
@@ -40,11 +59,17 @@ section {
     flex: 1;
     flex-direction: column;
     text-align: center;
-    align-items: center;
+    align-items: bottom;
+    border-top: 2px solid #091540ff;
+    border-bottom: 2px solid #091540ff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 200px;
 }
 
 #service p {
     max-width: 600px;
+    align-self: center;
 }
 
 #img-container {
@@ -52,12 +77,14 @@ section {
     display: flex;
     justify-content: flex-end;
     width: fit-content;
+    align-self: flex-start;
+    margin-top: 0px;
 }
 
 #img-container img {
     max-width: 100%;
     height: auto;
-    width: 700px;
+    width: 800px;
     box-shadow: -32px 17px 76px 6px rgba(0,32,69,0.43);
 }
 
@@ -86,6 +113,32 @@ form > :first-child {
 
 form > :last-child {
     margin-bottom: 15%;
+}
+
+#quote {
+    padding-top: 100px;
+}
+
+#vessel2-container {
+    padding-top: 200px;
+    padding-bottom: 0px;
+    margin: 0;
+}
+
+#vessel2-container img {
+    opacity: .2;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+footer {
+    background-color: #3d518cff;
+    margin: 0;
+    margin-top: -5px;
+    position: absolute;
+    width: 100%;
 }
 
 
