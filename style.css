@@ -18,7 +18,7 @@ h1 {
     margin-right: 25%;
 }
 
-header > img {
+header img {
     margin-left: 20px;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -30,14 +30,40 @@ section {
 
 #service {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-#service > img {
-box-shadow: -32px 17px 76px 6px rgba(0,32,69,0.43);
+#text-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#service p {
+    max-width: 600px;
+}
+
+#img-container {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+#img-container img {
+    max-width: 100%;
+    height: auto;
+    width: 700px;
+    box-shadow: -32px 17px 76px 6px rgba(0,32,69,0.43);
 }
 
 form {
     background-color: #7692ff40;
+    border: 2px solid #091540ff;
     border-radius: 20%;
     display: flex;
     flex-direction: column;
