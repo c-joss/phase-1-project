@@ -133,12 +133,57 @@ form > :last-child {
     border-top-right-radius: 5px;
 }
 
+#table {
+    padding-top: 200px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table th, #table td {
+    border: 2px solid #091540ff;
+    padding: 10px;
+    text-align: left;
+}
+
+#table-head {
+    background-color: #7692ffff;
+}
+
+#table-body {
+    background-color: #abd2faff;
+}
+
 footer {
-    background-color: #3d518cff;
-    margin: 0;
-    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #3d518c;
+    color: white;
+    padding: 20px;
     position: absolute;
     width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#contact-container p {
+    margin: 5px 0;
+}
+
+#cpy {
+    margin-top: 10px;
+}
+
+footer a {
+    color: #abd2fa;
 }
 
 
