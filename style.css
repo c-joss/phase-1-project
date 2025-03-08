@@ -20,6 +20,7 @@ header {
     width: 100%;
     justify-content: center;
     position: relative;
+    flex-direction: column;
 }
 
 main {
@@ -28,10 +29,21 @@ main {
     margin: 0 auto;
 }
 
-h1 {
-    font-size: 50px;
+h1, #header-container h2 {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
     text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+#header-container h2 {
+    font-size: 50px;
 }
 
 #logo {
@@ -186,6 +198,148 @@ footer a {
     color: #abd2fa;
 }
 
+h2 {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;    
+}
+
+p, h3, form, #table th, #table td {
+    font-family: "Inclusive Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#table th, h3 {
+    font-weight: 500;
+}
+
+#table, #reference {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 60px;
+    }
+    #header-container h2 {
+        font-size: 40px;
+    }
+    #logo {
+        left: 20px;
+        width: 120px;
+        height: 120px;
+    }
+    #service {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding-top: 50px;
+    }
+    #text-container {
+        margin-top: 100px;
+        padding: 30px;
+    }
+    #img-container img {
+        width: 600px;
+    }
+    form {
+        width: 350px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 180px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    #header-container h2 {
+        font-size: 30px;
+    }
+    #logo {
+        left: 10px;
+        width: 100px;
+        height: 100px;
+    }
+    #service {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+    }
+    #text-container {
+        border: none;
+        margin-top: 50px;
+        padding: 20px;
+    }
+    #img-container img {
+        width: 100%;
+        max-width: 400px;
+    }
+    form {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding: 20px;
+        border-radius: 15%;
+    }
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 938px) {
+    #header-container {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 120px;
+    }
+    #logo {
+        position: absolute;
+        left: 10px;
+        width: 100px;
+        height: 100px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    #header-container h2 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 416px) {
+    header, footer {
+        width: 100vw;
+        max-width: 100%;
+        min-width: 100%;
+        margin: 0;
+        padding: 10px 0;
+        display: block;
+    }
+    #logo {
+        display: none;
+    }
+    #header-container {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    #header-container h2 {
+        font-size: 28px;
+    }
+}
 
 
 
