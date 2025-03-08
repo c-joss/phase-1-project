@@ -1,0 +1,22 @@
+{
+    "rates": [],
+    "ports": {
+        "load": ["Melbourne", "Sydney", "Brisbane"],
+        "destination": ["Shanghai", "Ningbo", "Shekou", "Kaohsiung", "Auckland", "Apia", "Suva", "Papeete"]
+    },
+    "containers": ["20GP", "40GP", "40HC", "20RE", "40REHC"],
+    "Quotes": [
+        {
+            "id": 1,
+            "portOfLoad":,
+            "destination",
+            "transitTime",
+            "container",
+            "freight",
+            "thc",
+            "doc",
+            "dhc",
+            "lss",
+        },
+    ]
+      
