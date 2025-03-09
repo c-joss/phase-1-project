@@ -1,22 +1,326 @@
 {
-    "rates": [],
-    "ports": {
-        "load": ["Melbourne", "Sydney", "Brisbane"],
-        "destination": ["Shanghai", "Ningbo", "Shekou", "Kaohsiung", "Auckland", "Apia", "Suva", "Papeete"]
-    },
-    "containers": ["20GP", "40GP", "40HC", "20RE", "40REHC"],
+    "portPairs": [
+        {"id": 1, "load": "Melbourne", "destination": "Shanghai" },
+        {"id": 2, "load": "Sydney", "destination": "Shanghai" },
+        {"id": 3, "load": "Brisbane", "destination": "Shanghai" },
+        {"id": 4, "load": "Melbourne", "destination": "Ningbo" },
+        {"id": 5, "load": "Sydney", "destination": "Ningbo" },
+        {"id": 6, "load": "Brisbane", "destination": "Ningbo" },
+        {"id": 7, "load": "Melbourne", "destination": "Shekou" },
+        {"id": 8, "load": "Sydney", "destination": "Shekou" },
+        {"id": 9, "load": "Brisbane", "destination": "Shekou" },
+        {"id": 10, "load": "Melbourne", "destination": "Kaohsiung" },
+        {"id": 11, "load": "Sydney", "destination": "Kaohsiung" },
+        {"id": 12, "load": "Brisbane", "destination": "Kaohsiung" },
+        {"id": 13, "load": "Melbourne", "destination": "Auckland" },
+        {"id": 14, "load": "Sydney", "destination": "Auckland" },
+        {"id": 15, "load": "Brisbane", "destination": "Auckland" },
+        {"id": 16, "load": "Melbourne", "destination": "Apia" },
+        {"id": 17, "load": "Sydney", "destination": "Apia" },
+        {"id": 18, "load": "Brisbane", "destination": "Apia" },
+        {"id": 19, "load": "Melbourne", "destination": "Suva" },
+        {"id": 20, "load": "Sydney", "destination": "Suva" },
+        {"id": 21, "load": "Brisbane", "destination": "Suva" },
+        {"id": 22, "load": "Melbourne", "destination": "Papeete" },
+        {"id": 23, "load": "Sydney", "destination": "Papeete" },
+        {"id": 24, "load": "Brisbane", "destination": "Papeete" }
+    ],
+    "containers": [
+        {"id": 1, "type": "20GP" }, 
+        {"id": 2, "type": "40GP" },
+        {"id": 3, "type": "40HC" },
+        {"id": 4, "type": "20RE" },
+        {"id": 5, "type": "40REHC" }
+    ],
     "Quotes": [
         {
             "id": 1,
-            "portOfLoad":,
-            "destination",
-            "transitTime",
-            "container",
-            "freight",
-            "thc",
-            "doc",
-            "dhc",
-            "lss",
+            "portPairId": 1,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "30 days"      
         },
+        {
+            "id": 2,
+            "portPairId": 2,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "26 days"      
+        },
+        {
+            "id": 3,
+            "portPairId": 3,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "24 days"      
+        },
+        {
+            "id": 4,
+            "portPairId": 4,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "33 days"      
+        },
+        {
+            "id": 5,
+            "portPairId": 5,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "29 days"      
+        },
+        {
+            "id": 6,
+            "portPairId": 6,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "27 days"      
+        },
+        {
+            "id": 7,
+            "portPairId": 7,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "35 days"      
+        },
+        {
+            "id": 8,
+            "portPairId": 8,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "31 days"      
+        },
+        {
+            "id": 9,
+            "portPairId": 9,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "29 days"      
+        },
+        {
+            "id": 10,
+            "portPairId": 10,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "20 days"      
+        },
+        {
+            "id": 11,
+            "portPairId": 11,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "16 days"      
+        },
+        {
+            "id": 12,
+            "portPairId": 12,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "14 days"      
+        },
+        {
+            "id": 13,
+            "portPairId": 13,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "9 days"      
+        },
+        {
+            "id": 14,
+            "portPairId": 14,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "5 days"      
+        },
+        {
+            "id": 15,
+            "portPairId": 15,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "3 days"      
+        },
+        {
+            "id": 16,
+            "portPairId": 16,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "16 days"      
+        },
+        {
+            "id": 17,
+            "portPairId": 17,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "12 days"      
+        },
+        {
+            "id": 18,
+            "portPairId": 18,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "10 days"      
+        },
+        {
+            "id": 19,
+            "portPairId": 19,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "12 days"      
+        },
+        {
+            "id": 20,
+            "portPairId": 20,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "8 days"      
+        },
+        {
+            "id": 21,
+            "portPairId": 21,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "6 days"      
+        }, 
+        {
+            "id": 22,
+            "portPairId": 22,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 400, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 500, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 550, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 600, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "9 days"      
+        }, 
+        {
+            "id": 23,
+            "portPairId": 23,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 300, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 400, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 500, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 550, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "5 days"      
+        }, 
+        {
+            "id": 24,
+            "portPairId": 24,
+            "rates": [
+                {"containerId": 1, "freight": 100, "thc": 200, "doc": 100, "dhc": 50, "lss": 35 },
+                {"containerId": 2, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 3, "freight": 200, "thc": 300, "doc": 100, "dhc": 100, "lss": 70 },
+                {"containerId": 4, "freight": 1000, "thc": 400, "doc": 100, "dhc": 50, "lss": 50 },
+                {"containerId": 5, "freight": 1200, "thc": 450, "doc": 100, "dhc": 100, "lss": 100 }
+            ],
+            "transitTime": "3 days"      
+        }        
     ]
+}
       
