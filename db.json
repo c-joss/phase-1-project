@@ -32,7 +32,7 @@
         {"id": 4, "type": "20RE" },
         {"id": 5, "type": "40REHC" }
     ],
-    "Quotes": [
+    "quotes": [
         {
             "id": 1,
             "portPairId": 1,

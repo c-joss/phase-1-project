@@ -33,15 +33,15 @@
             <p>Complete the form below for an instant quote!</p>
             <form>
                 <label>Company Name:</label>
-                <input id="requirements" type="text" required>
+                <input id="companyName" type="text" required>
                 <label>Port of load:</label>
-                <select class="options" required>
+                <select id="load" class="options" required>
                     <option>Melbourne</option>
                     <option>Sydney</option>
                     <option>Brisbane</option>
                 </select>
                 <label>Destination:</label>
-                <select class="options" required>
+                <select id="dest" class="options" required>
                     <option>Shanghai</option>
                     <option>Ningbo</option>
                     <option>Shekou</option>
@@ -52,7 +52,7 @@
                     <option>Papeete</option>
                 </select>
                 <label>Container size:</label>
-                <select class="options" required>
+                <select id="container" class="options" required>
                     <option>20GP</option>
                     <option>40GP</option>
                     <option>40HC</option>
@@ -105,6 +105,7 @@
         <div id="cpy">
             <p id="copyright">&copy; 2025 Davie Jones Shipping. All rights reserved.</p>
         </div>        
-    </footer>    
+    </footer>
+    <script src="index.js"></script>    
 </body>
 </html>
