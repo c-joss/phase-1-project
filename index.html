@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div id="header-container">
-            <img id="logo" src="source/DJ Shipping logo.PNG" alt="Davie Jones Shipping Company Logo" width="150px" height="150px">        
+            <img id="logo" src="source/DJ Shipping logo.PNG" alt="Davie Jones Shipping Company Logo" width="150px"
+                height="150px">
             <h1>Davie Jones Shipping</h1>
             <h2>Rates</h2>
         </div>
@@ -22,11 +27,15 @@
         <section id="service">
             <div id="text-container">
                 <h2>Service</h2>
-                <p>Our Full Container Load (FCL) services offer reliable and cost-effective shipping solutions across <strong>Asia and the Pacific Islands</strong>. With an extensive network port partnerships, we ensure seamless port-to-port solutions. From major hubs in <strong>China, Japan, and Southeast Asia to key destinations in Australia, New Zealand, and the Pacific Islands</strong>, we help businesses optimize their international trade operations with secure and timely deliveries.</p>
+                <p>Our Full Container Load (FCL) services offer reliable and cost-effective shipping solutions across
+                    <strong>Asia and the Pacific Islands</strong>. With an extensive network port partnerships, we
+                    ensure seamless port-to-port solutions. From major hubs in <strong>China, Japan, and Southeast Asia
+                        to key destinations in Australia, New Zealand, and the Pacific Islands</strong>, we help
+                    businesses optimize their international trade operations with secure and timely deliveries.</p>
             </div>
             <div id="img-container">
                 <img id="vessel" src="source/vessel.webp" alt="Image of liner vessel at sea.">
-            </div>            
+            </div>
         </section>
         <section id="quote">
             <h2>Request a Quote</h2>
@@ -34,35 +43,50 @@
             <form>
                 <label for="companyName">Company Name:</label>
                 <input id="companyName" type="text" required>
-                <label for="load">Port of load:</label>
-                <select id="load" class="options" required>
-                    <option>Melbourne</option>
-                    <option>Sydney</option>
-                    <option>Brisbane</option>
-                </select>
-                <label>Destination:</label>
-                <select id="dest" class="options" required>
-                    <option>Shanghai</option>
-                    <option>Ningbo</option>
-                    <option>Shekou</option>
-                    <option>Kaohsiung</option>
-                    <option>Auckland</option>
-                    <option>Apia</option>
-                    <option>Suva</option>
-                    <option>Papeete</option>
-                </select>
-                <label>Container size:</label>
-                <select id="container" class="options" required>
-                    <option>20GP</option>
-                    <option>40GP</option>
-                    <option>40HC</option>
-                    <option>20RE</option>
-                    <option>40REHC</option>    
-                </select>
+
+                <div class="custom-multiselect">
+                    <label>Select one or more ports</label>
+                    <div class="multi-checkbox-group" id="load">
+                        <label><input type="checkbox" name="load" value="Melbourne"> Melbourne</label>
+                        <label><input type="checkbox" name="load" value="Sydney"> Sydney</label>
+                        <label><input type="checkbox" name="load" value="Brisbane"> Brisbane</label>
+                    </div>
+                </div>
+
+                <div class="custom-multiselect">
+                    <label>Select one or more destinations</label>
+                    <div class="multi-checkbox-group" id="dest">
+                        <label><input type="checkbox" name="dest" value="Shanghai"> Shanghai</label>
+                        <label><input type="checkbox" name="dest" value="Ningbo"> Ningbo</label>
+                        <label><input type="checkbox" name="dest" value="Shekou"> Shekou</label>
+                        <label><input type="checkbox" name="dest" value="Kaohsiung"> Kaohsiung</label>
+                        <label><input type="checkbox" name="dest" value="Auckland"> Auckland</label>
+                        <label><input type="checkbox" name="dest" value="Apia"> Apia</label>
+                        <label><input type="checkbox" name="dest" value="Suva"> Suva</label>
+                        <label><input type="checkbox" name="dest" value="Papeete"> Papeete</label>
+                    </div>
+                </div>
+
+                <div class="custom-multiselect">
+                    <label>Select one or more container sizes</label>
+                    <div class="multi-checkbox-group" id="container">
+                        <label><input type="checkbox" name="container" value="20GP"> 20GP</label>
+                        <label><input type="checkbox" name="container" value="40GP"> 40GP</label>
+                        <label><input type="checkbox" name="container" value="40HC"> 40HC</label>
+                        <label><input type="checkbox" name="container" value="20RE"> 20RE</label>
+                        <label><input type="checkbox" name="container" value="40REHC"> 40REHC</label>
+                    </div>
+                </div>
+
                 <label>Commodity:</label>
                 <input id="commodity" type="text" required>
-                <label>Special requirements:</label>
-                <input type="text" id="requirements">
+
+                <div id="special-requirements-wrapper">
+                    <input type="checkbox" id="toggleSpecial">
+                    <label for="toggleSpecial">I have special requirements</label>
+                </div>
+                <input type="text" id="requirements" style="display:none;">
+
                 <input type="submit" value="Submit">
             </form>
         </section>
@@ -99,13 +123,15 @@
     <footer>
         <h3>Contact:</h3>
         <div id="contact-container">
-            <p id="email">Email: <a href="mailto:placebooking@daviejonesshipping.com">placebooking@daviejonesshipping.com</a></p>
-        <p id="phone">Phone: <a href="tel:1300 000 000">1300 000 000</a></p>
-        </div>        
+            <p id="email">Email: <a
+                    href="mailto:placebooking@daviejonesshipping.com">placebooking@daviejonesshipping.com</a></p>
+            <p id="phone">Phone: <a href="tel:1300 000 000">1300 000 000</a></p>
+        </div>
         <div id="cpy">
             <p id="copyright">&copy; 2025 Davie Jones Shipping. All rights reserved.</p>
-        </div>        
+        </div>
     </footer>
-    <script src="index.js"></script>    
+    <script src="index.js"></script>
 </body>
+
 </html>
