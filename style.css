@@ -112,6 +112,8 @@ form {
     margin-right: auto;
     text-align: left;
     justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .options, input, label{
@@ -149,12 +151,14 @@ form > :last-child {
     padding-top: 200px;
     border-collapse: collapse;
     width: 100%;
+    overflow-x: auto;
 }
 
 #table th, #table td {
     border: 2px solid #091540ff;
     padding: 10px;
     text-align: left;
+    word-break: break-word;
 }
 
 #table-head {
