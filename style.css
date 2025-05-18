@@ -507,3 +507,18 @@ form label:not(.custom-multiselect label) {
     display: none;
     margin-top: 10px;
 }
+
+#special-requirements-display {
+    margin-top: 20px;
+    font-style: italic;
+    color: #333;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #f5faff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}

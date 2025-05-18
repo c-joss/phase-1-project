@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const destinations = getCheckedValues("dest");
     const containers = getCheckedValues("container");
 
+    const requirementsInput = document.getElementById("requirements");
+    const requirementsText = requirementsInput && requirementsInput.value ? requirementsInput.value.trim() : "";
+
     try {
       const [quotes, portPairs] = await Promise.all([
         fetch("http://localhost:8000/quotes").then((res) => res.json()),
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ),
       }));
 
-      updateTable(custQuote, companyName);
+      updateTable(custQuote, companyName, requirementsText);
       e.target.reset();
       clearCheckboxGroups();
     } catch (error) {
@@ -60,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return containerMap[containerId] || "unknown";
   }
 
-  async function updateTable(quotes, companyName) {
+  async function updateTable(quotes, companyName, requirementsText) {
     const tableBody = document.getElementById("table-body");
     document.getElementById("table").style.display = "block";
     while (tableBody.firstChild) {
@@ -92,6 +95,18 @@ document.addEventListener("DOMContentLoaded", function () {
         row.appendChild(createCell(`${rate.lss} USD`));
         tableBody.appendChild(row);
       }
+    }
+
+    if (requirementsText && requirementsText !== "") {
+      const specialRow = document.createElement("tr");
+      const specialCell = document.createElement("td");
+      specialCell.setAttribute("colspan", "10");
+      specialCell.textContent = `Special Requirements: ${requirementsText}`;
+      specialCell.style.fontStyle = "italic";
+      specialCell.style.backgroundColor = "#eef5ff";
+      specialCell.style.padding = "10px";
+      specialRow.appendChild(specialCell);
+      tableBody.appendChild(specialRow);
     }
   }
 
