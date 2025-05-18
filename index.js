@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function updateTable(quotes, companyName, requirementsText) {
     const tableBody = document.getElementById("table-body");
     document.getElementById("table").style.display = "block";
+    document.getElementById("booking-btn").style.display = "block";
     while (tableBody.firstChild) {
       tableBody.removeChild(tableBody.firstChild);
     }
