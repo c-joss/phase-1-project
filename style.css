@@ -89,12 +89,12 @@ section {
 }
 
 #img-container {
-  flex: 1; 
-  display: flex;
-  justify-content: flex-end;
-  align-self: flex-start;
-  margin-top: 0px;
-  max-width: 800px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    margin-top: 0px;
+    max-width: 800px;
 }
 
 #img-container img {
@@ -260,8 +260,8 @@ h3 {
     }
 
     #img-container {
-    max-width: 500px;
-  }
+        max-width: 500px;
+    }
 
     form {
         width: 350px;
@@ -295,15 +295,21 @@ h3 {
     }
 
     #img-container {
-    display: none;
-  }
+        display: none;
+    }
 
     form {
+        width: 95%;
+        padding: 15px;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="submit"] {
+        max-width: 100%;
         width: 100%;
-        max-width: 300px;
-        height: auto;
-        padding: 20px;
-        border-radius: 15%;
+        margin: 10px 0;
     }
 
     footer {
@@ -335,8 +341,22 @@ h3 {
     }
 
     #img-container {
-    display: none;
-  }
+        display: none;
+    }
+
+    form {
+        width: 95%;
+        padding: 15px;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="submit"] {
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
 @media (max-width: 416px) {
@@ -373,8 +393,22 @@ h3 {
     }
 
     #img-container {
-    display: none;
-  }
+        display: none;
+    }
+
+    form {
+        width: 95%;
+        padding: 15px;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="submit"] {
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
 .custom-multiselect {
