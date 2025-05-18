@@ -89,18 +89,18 @@ section {
 }
 
 #img-container {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: flex-end;
-    width: fit-content;
-    align-self: flex-start;
-    margin-top: 0px;
+  flex: 1; 
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+  margin-top: 0px;
+  max-width: 800px;
 }
 
 #img-container img {
     max-width: 100%;
     height: auto;
-    width: 800px;
+    width: 700px;
     box-shadow: -32px 17px 76px 6px rgba(0, 32, 69, 0.43);
 }
 
@@ -259,14 +259,9 @@ h3 {
         padding-top: 50px;
     }
 
-    #text-container {
-        margin-top: 100px;
-        padding: 30px;
-    }
-
-    #img-container img {
-        width: 600px;
-    }
+    #img-container {
+    max-width: 500px;
+  }
 
     form {
         width: 350px;
@@ -299,16 +294,9 @@ h3 {
         padding-top: 30px;
     }
 
-    #text-container {
-        border: none;
-        margin-top: 50px;
-        padding: 20px;
-    }
-
-    #img-container img {
-        width: 100%;
-        max-width: 400px;
-    }
+    #img-container {
+    display: none;
+  }
 
     form {
         width: 100%;
@@ -345,6 +333,10 @@ h3 {
     #header-container h2 {
         font-size: 35px;
     }
+
+    #img-container {
+    display: none;
+  }
 }
 
 @media (max-width: 416px) {
@@ -379,6 +371,10 @@ h3 {
     #header-container h2 {
         font-size: 28px;
     }
+
+    #img-container {
+    display: none;
+  }
 }
 
 .custom-multiselect {
