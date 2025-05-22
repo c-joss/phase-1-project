@@ -10,19 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const requirementsInput = document.getElementById("requirements");
     const requirementsText = requirementsInput && requirementsInput.value ? requirementsInput.value.trim() : "";
 
-    if (loadPorts.length === 0) {
-      alert("Please select at least one port.");
-      return;
-    }
-    if (destinations.length === 0) {
-      alert("Please select at least one destination.");
-      return;
-    }
-    if (containers.length === 0) {
-      alert("Please select at least one container size.");
-      return;
-    }
-
     try {
       const [quotes, portPairs] = await Promise.all([
         fetch("http://localhost:8000/quotes").then((res) => res.json()),
@@ -168,5 +155,3 @@ document.querySelectorAll(".multi-checkbox-group label").forEach(label => {
     document.querySelector("form").dispatchEvent(new Event("submit"));
   }
 });
-
-

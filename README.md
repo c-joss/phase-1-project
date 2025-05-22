@@ -22,22 +22,25 @@ This is a single-page application that allows users to request shipping quotes b
 
 1. Clone this repository:
 
-   git clone https://github.com/yourusername/shipping-quotes-app.git
+   git clone [GitHub Repo](https://github.com/yourusername/shipping-quotes-app.git)
 
 2. Navigate to the project folder:
-```bash 
+
+```bash
 cd shipping-quotes-app
 ```
 
-3. Install and run json-server:
-```bash 
-npm install -g json-server
-json-server --watch db.json
+3.Install and run json-server:
+
+```bash
+npm install -g json-server@0.17.0
+json-server --watch db.json --port 8000
 ```
 
-4. Open index.html in your browser to use the app.
+4.Open index.html in your browser to use the app.
 
 ## Usage
+
 - Enter your company name
 
 - Select at least one load port, destination, and container type
@@ -45,4 +48,3 @@ json-server --watch db.json
 - Toggle and fill special requirements (optional)
 
 - Submit to view quotes
-
