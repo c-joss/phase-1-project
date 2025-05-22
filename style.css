@@ -563,14 +563,14 @@ form label:not(.custom-multiselect label) {
 }
 
 .required {
-  color: red;
-  font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 
 .required-note {
-  font-size: 0.75rem;
-  color: #333;
-  margin-top: 10px;
-  margin-bottom: 0; 
-  text-align: center;
+    font-size: 0.75rem;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
 }
