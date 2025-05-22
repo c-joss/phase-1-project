@@ -148,3 +148,10 @@ document.querySelectorAll(".multi-checkbox-group label").forEach(label => {
       label.style.paddingLeft = "";
     });
   });
+
+  document.getElementById("companyName").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.querySelector("form").dispatchEvent(new Event("submit"));
+  }
+});
