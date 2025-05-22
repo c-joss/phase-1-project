@@ -72,7 +72,6 @@ section {
     flex: 1;
     flex-direction: column;
     text-align: center;
-    align-items: bottom;
     border-top: 2px solid #091540ff;
     border-bottom: 2px solid #091540ff;
     padding-top: 50px;
@@ -222,7 +221,6 @@ form,
 #table th,
 #table td {
     font-family: "Inclusive Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
 }
