@@ -44,11 +44,11 @@
         <section id="quote">
             <h2>Request a Quote</h2>
             <form>
-                <label for="companyName">Company Name:</label>
+                <label for="companyName">Company Name: <span class="required">*</span></label>
                 <input id="companyName" type="text" required>
 
                 <div class="custom-multiselect">
-                    <label>Select one or more ports</label>
+                    <label>Select one or more ports <span class="required">*</span></label>
                     <div class="multi-checkbox-group" id="load">
                         <label><input type="checkbox" name="load" value="Melbourne"> Melbourne</label>
                         <label><input type="checkbox" name="load" value="Sydney"> Sydney</label>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="custom-multiselect">
-                    <label>Select one or more destinations</label>
+                    <label>Select one or more destinations <span class="required">*</span></label>
                     <div class="multi-checkbox-group" id="dest">
                         <label><input type="checkbox" name="dest" value="Shanghai"> Shanghai</label>
                         <label><input type="checkbox" name="dest" value="Ningbo"> Ningbo</label>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="custom-multiselect">
-                    <label>Select one or more container sizes</label>
+                    <label>Select one or more container sizes <span class="required">*</span></label>
                     <div class="multi-checkbox-group" id="container">
                         <label><input type="checkbox" name="container" value="20GP"> 20GP</label>
                         <label><input type="checkbox" name="container" value="40GP"> 40GP</label>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <label>Commodity:</label>
+                <label>Commodity: <span class="required">*</span></label>
                 <input id="commodity" type="text" required>
 
                 <div id="special-requirements-wrapper">
@@ -91,6 +91,7 @@
                 <input type="text" id="requirements" style="display:none;">
 
                 <input type="submit" value="Submit">
+                <p class="required-note"><span class="required">*</span> indicates required fields</p>
             </form>
         </section>
         <section id="table">
