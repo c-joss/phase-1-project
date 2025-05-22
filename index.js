@@ -135,3 +135,16 @@ document.querySelector("form").addEventListener("mouseleave", function() {
 document.getElementById("toggleSpecial").addEventListener("change", function(e) {
   document.getElementById("requirements").style.display = e.target.checked ? "block" : "none";
 });
+
+document.querySelectorAll(".multi-checkbox-group label").forEach(label => {
+    label.addEventListener("mouseenter", () => {
+      label.style.backgroundColor = "#e6f0ff";
+      label.style.borderRadius = "4px";
+      label.style.paddingLeft = "5px";
+    });
+    label.addEventListener("mouseleave", () => {
+      label.style.backgroundColor = "";
+      label.style.borderRadius = "";
+      label.style.paddingLeft = "";
+    });
+  });
