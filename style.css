@@ -559,4 +559,5 @@ form label:not(.custom-multiselect label) {
 #text-container h2,
 #quote h2 {
     font-weight: 600;
+    color: #3d518cff;
 }
