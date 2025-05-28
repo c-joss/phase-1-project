@@ -6,9 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadPorts = getCheckedValues("load");
     const destinations = getCheckedValues("dest");
     const containers = getCheckedValues("container");
-
+    const toggleSpecial = document.getElementById("toggleSpecial");
     const requirementsInput = document.getElementById("requirements");
     const requirementsText = requirementsInput && requirementsInput.value ? requirementsInput.value.trim() : "";
+
+    if (companyName.trim() === "") {
+      alert("Please enter your company name.");
+      return;
+    }
+    if (loadPorts.length === 0) {
+      alert("Please select at least one port.");
+      return;
+    }
+    if (destinations.length === 0) {
+      alert("Please select at least one destination.");
+      return;
+    }
+    if (containers.length === 0) {
+      alert("Please select at least one container size.");
+      return;
+    }
+    if (toggleSpecial.checked && requirementsText === "") {
+      alert("Please enter your special requirements or uncheck the box.");
+      return;
+    }
 
     try {
       const [quotes, portPairs] = await Promise.all([
@@ -35,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateTable(custQuote, companyName, requirementsText);
       e.target.reset();
       clearCheckboxGroups();
+      document.getElementById("requirements").style.display = "none";
     } catch (error) {
       console.error("Error retrieving quote:", error);
     }
