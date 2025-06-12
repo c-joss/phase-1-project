@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let cachedPortPairs = [];
   let cachedContainers = [];
 
-  // Preload Port Pairs and Container Types
+  // Preload port pairs & container types
   Promise.all([
     fetch("http://localhost:8000/portPairs").then((res) => res.json()),
     fetch("http://localhost:8000/containers").then((res) => res.json()),
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cachedContainers = containers;
   });
 
-  // Form Submit Event
+  // Form submit event
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
