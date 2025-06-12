@@ -1,97 +1,98 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("form").addEventListener("submit", async function (e) {
+  const form = document.querySelector("form");
+  const companyNameInput = document.getElementById("companyName");
+  const toggleSpecial = document.getElementById("toggleSpecial");
+  const requirementsInput = document.getElementById("requirements");
+
+  let cachedPortPairs = [];
+  let cachedContainers = [];
+
+  // Preload Port Pairs and Container Types
+  Promise.all([
+    fetch("http://localhost:8000/portPairs").then((res) => res.json()),
+    fetch("http://localhost:8000/containers").then((res) => res.json()),
+  ]).then(([portPairs, containers]) => {
+    cachedPortPairs = portPairs;
+    cachedContainers = containers;
+  });
+
+  // Form Submit Event
+
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const companyName = document.getElementById("companyName").value;
+    const companyName = companyNameInput.value.trim();
     const loadPorts = getCheckedValues("load");
     const destinations = getCheckedValues("dest");
     const containers = getCheckedValues("container");
-    const toggleSpecial = document.getElementById("toggleSpecial");
-    const requirementsInput = document.getElementById("requirements");
-    const requirementsText = requirementsInput && requirementsInput.value ? requirementsInput.value.trim() : "";
+    const requirementsText = requirementsInput?.value?.trim() || "";
 
-    if (companyName.trim() === "") {
-      alert("Please enter your company name.");
-      return;
-    }
-    if (loadPorts.length === 0) {
-      alert("Please select at least one port.");
-      return;
-    }
-    if (destinations.length === 0) {
-      alert("Please select at least one destination.");
-      return;
-    }
-    if (containers.length === 0) {
-      alert("Please select at least one container size.");
-      return;
-    }
-    if (toggleSpecial.checked && requirementsText === "") {
-      alert("Please enter your special requirements or uncheck the box.");
-      return;
-    }
+    // Form validation
+
+    if (!companyName) return alert("Please enter your company name.");
+    if (loadPorts.length === 0)
+      return alert("Please select at least one port.");
+    if (destinations.length === 0)
+      return alert("Please select at least one destination.");
+    if (containers.length === 0)
+      return alert("Please select at least one container size.");
+    if (toggleSpecial.checked && !requirementsText)
+      return alert(
+        "Please enter your special requirements or uncheck the box."
+      );
 
     try {
-      const [quotes, portPairs] = await Promise.all([
-        fetch("http://localhost:8000/quotes").then((res) => res.json()),
-        fetch("http://localhost:8000/portPairs").then((res) => res.json()),
-      ]);
-
-      const matchPortPairs = portPairs.filter(
-        (pair) => loadPorts.includes(pair.load) && destinations.includes(pair.destination)
-      );
-      const matchPortPairId = matchPortPairs.map((pair) => pair.id);
-
-      const filteredQuotes = quotes.filter((quote) =>
-        matchPortPairId.includes(quote.portPairId)
+      const quotes = await fetch("http://localhost:8000/quotes").then((res) =>
+        res.json()
       );
 
-      const custQuote = filteredQuotes.map((quote) => ({
-        ...quote,
-        rates: quote.rates.filter((rate) =>
-          containers.includes(getContainerType(rate.containerId))
-        ),
-      }));
+      const matchPortPairIds = cachedPortPairs
+        .filter(
+          (pair) =>
+            loadPorts.includes(pair.load) &&
+            destinations.includes(pair.destination)
+        )
+        .map((pair) => pair.id);
+
+      const custQuote = quotes
+        .filter((quote) => matchPortPairIds.includes(quote.portPairId))
+        .map((quote) => ({
+          ...quote,
+          rates: quote.rates.filter((rate) =>
+            containers.includes(
+              getContainerType(rate.containerId, cachedContainers)
+            )
+          ),
+        }));
 
       updateTable(custQuote, companyName, requirementsText);
       e.target.reset();
       clearCheckboxGroups();
-      document.getElementById("requirements").style.display = "none";
+      requirementsInput.style.display = "none";
     } catch (error) {
       console.error("Error retrieving quote:", error);
     }
   });
 
-  function getCheckedValues(groupId) {
-    return Array.from(document.querySelectorAll(`#${groupId} input[type='checkbox']:checked`)).map(
-      (checkbox) => checkbox.value
-    );
-  }
+  // Event listeners
 
-  function clearCheckboxGroups() {
-    document.querySelectorAll(".multi-checkbox-group input[type='checkbox']").forEach(
-      (checkbox) => (checkbox.checked = false)
-    );
-  }
+  toggleSpecial.addEventListener("change", function (e) {
+    requirementsInput.style.display = e.target.checked ? "block" : "none";
+  });
 
-  function getContainerType(containerId) {
-    const containerMap = {
-      1: "20GP",
-      2: "40GP",
-      3: "40HC",
-      4: "20RE",
-      5: "40REHC",
-    };
-    return containerMap[containerId] || "unknown";
-  }
+  companyNameInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      form.dispatchEvent(new Event("submit"));
+    }
+  });
 
   async function updateTable(quotes, companyName, requirementsText) {
     const tableBody = document.getElementById("table-body");
     document.getElementById("table").style.display = "block";
     document.getElementById("booking-btn").style.display = "block";
-    while (tableBody.firstChild) {
-      tableBody.removeChild(tableBody.firstChild);
-    }
+
+    while (tableBody.firstChild) tableBody.removeChild(tableBody.firstChild);
 
     if (quotes.length === 0) {
       const noDataRow = document.createElement("tr");
@@ -106,11 +107,14 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const quote of quotes) {
       for (const rate of quote.rates) {
         const row = document.createElement("tr");
+        const pair = cachedPortPairs.find((p) => p.id === quote.portPairId);
         row.appendChild(createCell(companyName));
-        row.appendChild(createCell(await getPortById(quote.portPairId, "load")));
-        row.appendChild(createCell(await getPortById(quote.portPairId, "destination")));
+        row.appendChild(createCell(pair?.load || "Unknown"));
+        row.appendChild(createCell(pair?.destination || "Unknown"));
         row.appendChild(createCell(quote.transitTime));
-        row.appendChild(createCell(getContainerType(rate.containerId)));
+        row.appendChild(
+          createCell(getContainerType(rate.containerId, cachedContainers))
+        );
         row.appendChild(createCell(`${rate.freight} USD`));
         row.appendChild(createCell(`${rate.thc} AUD`));
         row.appendChild(createCell(`${rate.doc} AUD`));
@@ -120,18 +124,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    if (requirementsText && requirementsText !== "") {
+    if (requirementsText) {
       const specialRow = document.createElement("tr");
       const specialCell = document.createElement("td");
       specialCell.setAttribute("colspan", "10");
       specialCell.textContent = `Special Requirements: ${requirementsText}`;
-      specialCell.style.fontStyle = "italic";
-      specialCell.style.backgroundColor = "#eef5ff";
-      specialCell.style.padding = "10px";
+      specialCell.style.cssText =
+        "font-style: italic; background-color: #eef5ff; padding: 10px;";
       specialRow.appendChild(specialCell);
       tableBody.appendChild(specialRow);
     }
   }
+
+  // Helpers
 
   function createCell(text) {
     const cell = document.createElement("td");
@@ -139,41 +144,20 @@ document.addEventListener("DOMContentLoaded", function () {
     return cell;
   }
 
-  async function getPortById(portPairId, key) {
-    const response = await fetch("http://localhost:8000/portPairs");
-    const portPairs = await response.json();
-    const pair = portPairs.find((p) => p.id === portPairId);
-    return pair ? pair[key] : "Unknown";
+  function getCheckedValues(groupId) {
+    return Array.from(
+      document.querySelectorAll(`#${groupId} input[type='checkbox']:checked`)
+    ).map((checkbox) => checkbox.value);
   }
-});
 
-document.querySelector("form").addEventListener("mouseenter", function() {
-  this.style.boxShadow = "0 0 10px #3d518c";
-});
-document.querySelector("form").addEventListener("mouseleave", function() {
-  this.style.boxShadow = "none";
-});
+  function clearCheckboxGroups() {
+    document
+      .querySelectorAll(".multi-checkbox-group input[type='checkbox']")
+      .forEach((checkbox) => (checkbox.checked = false));
+  }
 
-document.getElementById("toggleSpecial").addEventListener("change", function(e) {
-  document.getElementById("requirements").style.display = e.target.checked ? "block" : "none";
-});
-
-document.querySelectorAll(".multi-checkbox-group label").forEach(label => {
-    label.addEventListener("mouseenter", () => {
-      label.style.backgroundColor = "#e6f0ff";
-      label.style.borderRadius = "4px";
-      label.style.paddingLeft = "5px";
-    });
-    label.addEventListener("mouseleave", () => {
-      label.style.backgroundColor = "";
-      label.style.borderRadius = "";
-      label.style.paddingLeft = "";
-    });
-  });
-
-  document.getElementById("companyName").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    document.querySelector("form").dispatchEvent(new Event("submit"));
+  function getContainerType(containerId, containers) {
+    const container = containers.find((c) => c.id === containerId);
+    return container ? container.type : "unknown";
   }
 });

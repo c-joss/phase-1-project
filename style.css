@@ -572,3 +572,14 @@ form label:not(.custom-multiselect label) {
     margin-bottom: 0;
     text-align: center;
 }
+
+form:hover {
+  box-shadow: 0 0 10px #3d518c;
+}
+
+.multi-checkbox-group label:hover {
+  background-color: #e6f0ff;
+  border-radius: 4px;
+  padding-left: 5px;
+  transition: all 0.2s ease;
+}
